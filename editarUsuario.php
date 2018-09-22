@@ -92,9 +92,10 @@ $result	 = mysql_query($sql);
 				&nbsp;<input type="radio" name="nivel" value="1" <?php if(mysql_result($result, 0 , 'nivel_usuario')=='1'){echo 'checked';}?>>1
 				&nbsp;<input type="radio"  name="nivel" value="2" <?php if(mysql_result($result, 0 , 'nivel_usuario')=='2'){echo 'checked';}?>>2
 				<input type="radio" name="nivel" value="3" <?php if(mysql_result($result, 0 , 'nivel_usuario')=='3'){echo 'checked';}?>>3
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status:</b><select style="width: 80px;" name="status">
-					<option value="A">Ativo</option>
-					<option value="I">Inativo</option>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Status:</b><select style="width: 80px;" name="status"
+				value="<?php echo mysql_result($result,0,'status_usuario')?>">
+					<option value="A" <?php if(mysql_result($result, 0, 'status_usuario')=="A"){echo " selected ";}?>>Ativo</option>
+					<option value="I" <?php if(mysql_result($result, 0, 'status_usuario')=="I"){echo " selected ";}?>>Inativo</option>
 				</td>
 			</tr>
 			<tr>
