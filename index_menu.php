@@ -1,5 +1,14 @@
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<?php
+session_start();
+
+	include('seguranca.php');
+	if (!verificaSessao()) {
+		header("location: TelaLogin.php");
+}
+
+?>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Menu 1</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 
@@ -22,16 +31,18 @@ setTimeout("slide1()", 3000)
 
 </head>
 
-<body onload="slide1()" background="Fundo.jpg"><center><img src="logo.png" width="300" height="100" alt="login" ></center>
+<body onload="slide1()" background="Fundo.jpg"><img src="img/usuariologado.png" width="25" height="25" alt="login" >
+<font size="" face="verdana" color=""><?php echo $_SESSION["calory_usuario"];?></font>
+<center><img src="logo.png" width="300" height="100" alt="login" ></center>
 <ul id="menu-bar">
- <li><a href="index_menu.html">Inicio</a>
+ <li><a href="index_menu.php">Inicio</a>
  <li><a href="#">Cadastros</a>
    <ul>
-   <li><a href="Usuario.html">Novo Usuário</a></li>
-   <li><a href="EditarUsuario.html">Editar Usuário</a></li>
+   <li><a href="Usuario.php">Novo UsuÃ¡rio</a></li>
+   <li><a href="PesquisaUsuario.php">Editar UsuÃ¡rio</a></li>
   </ul>
  </li>
- <li><a href="#">Operações</a>
+ <li><a href="#">OperaÃ§Ãµes</a>
   <ul>
    <li><a href="#">Services Sub Menu 1</a></li>
    <li><a href="#">Services Sub Menu 2</a></li>
@@ -39,9 +50,9 @@ setTimeout("slide1()", 3000)
    <li><a href="#">Services Sub Menu 4</a></li>
   </ul>
  </li>
-  <li><a href="#">Relatórios</a>
+  <li><a href="#">RelatÃ³rios</a>
 	<ul>
-	<li><a href="rel_usu.php">Realtório de Usários</a><li>
+	<li><a href="rel_usu.php">RealtÃ³rio de UsÃ¡rios</a><li>
 	</ul>
 	</li>
  <li><a href="logoff.php">Sair</a></li>

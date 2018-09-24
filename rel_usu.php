@@ -2,6 +2,12 @@
 date_default_timezone_set("America/Sao_Paulo");
 include('include/config.dba.php');
 
+session_start();
+
+include('seguranca.php');
+	if (!verificaSessao()) {
+		header("location: TelaLogin.php");
+
 $conexao = mysql_pconnect($host,$user,$pass);
 mysql_select_db($base,$conexao);
 
@@ -16,13 +22,18 @@ if($n_sql_rel!=0){
 	?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="style.css" rel="stylesheet" type="text/css" />
-<body background="Fundo.jpg"><center><img src="logo.png" width="300" height="100" alt="login" ></center>
+
+
+<body background="Fundo.jpg"><img src="img/usuariologado.png" width="25" height="25" alt="login">
+<font size="" face="verdana" color=""><?php echo $_SESSION["calory_usuario"];?></font>
+
+<center><img src="logo.png" width="300" height="100" alt="login" ></center>
 <ul id="menu-bar">
- <li><a href="index_menu.html">Inicio</a>
+ <li><a href="index_menu.php">Inicio</a>
  <li><a href="#">Cadastros</a>
    <ul>
-   <li><a href="Usuario.html">Novo Usuário</a></li>
-   <li><a href="EditarUsuario.html">Editar Usuário</a></li>
+   <li><a href="Usuario.php">Novo Usuário</a></li>
+   <li><a href="PesquisaUsuario.php">Editar Usuário</a></li>
   </ul>
  </li>
  <li><a href="#">Operações</a>

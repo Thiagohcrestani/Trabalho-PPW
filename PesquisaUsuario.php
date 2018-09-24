@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+include('seguranca.php');
+	if (!verificaSessao()) {
+		header("location: TelaLogin.php");
+	}
+
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
@@ -8,13 +18,15 @@
   <!-- <link href="estilo.css" rel="stylesheet" type="text/css">
  --> </head>
 
- <body background="Fundo.jpg"><center><img src="logo.png" width="300" height="100" alt="login" ></center>
+ <body background="Fundo.jpg"><img src="img/usuariologado.png" width="25" height="25" alt="login" >
+ <font size="" face="verdana" color=""><?php echo $_SESSION["calory_usuario"];?></font>
+ <center><img src="logo.png" width="300" height="100" alt="login" ></center>
  <ul id="menu-bar">
- <li><a href="index_menu.html">Inicio</a>
+ <li><a href="index_menu.php">Inicio</a>
  <li><a href="#">Cadastros</a>
   <ul>
-   <li><a href="Usuario.html">Novo Usuário</a></li>
-   <li><a href="EditarUsuario.html">Editar Usuário</a></li>
+   <li><a href="Usuario.php">Novo Usuário</a></li>
+   <li><a href="PesquisaUsuario.php">Editar Usuário</a></li>
   </ul>
  </li>
  <li><a href="#">Operações</a>
@@ -27,7 +39,7 @@
  </li>
  <li><a href="#">Relatórios</a>
 	<ul>
-	<li><a href="rel_usu.php">Realtório de Usários</a><li>
+	<li><a href="rel_usu.php">Relatório de Usários</a><li>
 	</ul>
 	</li>
  <li><a href="logoff.php">Sair</a></li>

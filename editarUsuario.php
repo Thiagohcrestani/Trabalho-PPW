@@ -1,6 +1,8 @@
 <?php
 include('include/config.dba.php');
 
+session_start();
+
 $conexao = mysql_pconnect($host,$user,$pass);
 mysql_select_db($base,$conexao);
 

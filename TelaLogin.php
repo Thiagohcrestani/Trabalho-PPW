@@ -1,5 +1,11 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<?php
+	include('seguranca.php');
+	if (verificaSessao()) {
+		header("location: index_menu.php");
+}
+?>
 	<head>
 	<meta charset="UTF-8">
 	<meta lang="pt-br">
@@ -36,7 +42,7 @@
 </script>
 	<body background="Fundo.jpg"><center><img src="logo.png" width="300" height="100" alt="login" ></center>
 
-		<form name="form1" action="ValidaLogin" method="post" onsubmit="return valida();">
+		<form name="form1" action="ValidaLogin.php" method="post" onsubmit="return valida();">
 			<div align="center"> 
 				
 					

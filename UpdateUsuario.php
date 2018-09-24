@@ -21,5 +21,5 @@
 	where id_usuario = '{$_POST['id']}'";
 	$result_sql = mysql_query($sql,$conexao);
 
-	header("location: EditarUsuario.html");
+	header("location: PesquisaUsuario.php");
 ?>
