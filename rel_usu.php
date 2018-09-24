@@ -7,6 +7,7 @@ session_start();
 include('seguranca.php');
 	if (!verificaSessao()) {
 		header("location: TelaLogin.php");
+	}
 
 $conexao = mysql_pconnect($host,$user,$pass);
 mysql_select_db($base,$conexao);
