@@ -39,7 +39,7 @@ include('seguranca.php');
  </li>
  <li><a href="#">Relatórios</a>
 	<ul>
-	<li><a href="rel_usu.php">Relatório de Usários</a><li>
+	<li><a href="rel_usu.php">Relatório de Usuários</a><li>
 	</ul>
 	</li>
  <li><a href="logoff.php">Sair</a></li>
