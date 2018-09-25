@@ -52,7 +52,7 @@ setTimeout("slide1()", 3000)
  </li>
   <li><a href="#">Relatórios</a>
 	<ul>
-	<li><a href="rel_usu.php">Realtório de Usários</a><li>
+	<li><a href="rel_usu.php">Relatório de Usários</a><li>
 	</ul>
 	</li>
  <li><a href="logoff.php">Sair</a></li>
